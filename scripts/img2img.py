@@ -37,7 +37,7 @@ from ldm.models.diffusion.plms import PLMSSampler
 
 # streamlit components
 from custom_components import sygil_suggestions
-from streamlit_drawable_canvas import st_canvas
+# from streamlit_drawable_canvas import st_canvas
 
 # Temp imports
 
@@ -634,20 +634,20 @@ def layout():
 			#
 			# Create a canvas component
 			with st.session_state["canvas"]:
-				st.session_state["uploaded_masks"] = st_canvas(
-					fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
-					stroke_width=stroke_width,
-					stroke_color=stroke_color,
-					background_color=bg_color,
-					background_image=image if uploaded_images else None,
-					update_streamlit=True,
-					width=width,
-					height=height,
-					drawing_mode=drawing_mode,
-					initial_drawing=st.session_state["uploaded_masks"].json_data if "uploaded_masks" in st.session_state else None,
-					display_toolbar= display_toolbar,
-					key="full_app",
-				)
+				# st.session_state["uploaded_masks"] = st_canvas(
+				# 	fill_color="rgba(255, 165, 0, 0.3)",  # Fixed fill color with some opacity
+				# 	stroke_width=stroke_width,
+				# 	stroke_color=stroke_color,
+				# 	background_color=bg_color,
+				# 	background_image=image if uploaded_images else None,
+				# 	update_streamlit=True,
+				# 	width=width,
+				# 	height=height,
+				# 	drawing_mode=drawing_mode,
+				# 	initial_drawing=st.session_state["uploaded_masks"].json_data if "uploaded_masks" in st.session_state else None,
+				# 	display_toolbar= display_toolbar,
+				# 	key="full_app",
+				# )
 
 				#try:
 					##print (type(st.session_state["uploaded_masks"]))
