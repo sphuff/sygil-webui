@@ -24,6 +24,7 @@ general:
     default_theme: dark
     huggingface_token: ''
     stable_horde_api: '0000000000'
+    placeholder: "TEST_PLACEHOLDER"
     gpu: 0
     outdir: outputs
     default_model: "Stable Diffusion v1.5"

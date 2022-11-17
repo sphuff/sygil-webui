@@ -423,7 +423,7 @@ def layout():
 
         with input_col1:
             #prompt = st.text_area("Input Text","")
-            placeholder = "A corgi wearing a top hat as an oil painting."
+            placeholder = st.session_state['defaults'].general.placeholder
             prompt = st.text_area("Input Text","", placeholder=placeholder, height=54)
             sygil_suggestions.suggestion_area(placeholder)
 
