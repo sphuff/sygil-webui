@@ -59,7 +59,7 @@ from diffusers.schedulers import DDIMScheduler, LMSDiscreteScheduler, \
 from diffusers.configuration_utils import FrozenDict
 from diffusers.models import AutoencoderKL, UNet2DConditionModel
 from diffusers.pipelines.stable_diffusion.safety_checker import StableDiffusionSafetyChecker
-from diffusers.utils import deprecate
+# from diffusers.utils import deprecate
 from diffusers.pipelines.stable_diffusion import StableDiffusionPipelineOutput
 from transformers import CLIPFeatureExtractor, CLIPTextModel, CLIPTokenizer
 from typing import Callable, List, Optional, Union
@@ -249,7 +249,7 @@ class StableDiffusionWalkPipeline(DiffusionPipeline):
                                 " it would be very nice if you could open a Pull request for the `scheduler/scheduler_config.json`"
                                 " file"
             )
-            deprecate("steps_offset!=1", "1.0.0", deprecation_message, standard_warn=False)
+            # deprecate("steps_offset!=1", "1.0.0", deprecation_message, standard_warn=False)
             new_config = dict(scheduler.config)
             new_config["steps_offset"] = 1
             scheduler._internal_dict = FrozenDict(new_config)
