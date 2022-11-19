@@ -28,6 +28,7 @@ from sd_utils import logger, load_models
 #other imports
 import requests, time, json, base64
 from io import BytesIO
+import hydralit as st
 
 # import custom components
 
@@ -46,7 +47,7 @@ def run_bridge(interval, api_key, horde_name, horde_url, priority_usernames, hor
     # we should load it after we get the request from the API in
     # case the model is different from the loaded in memory but
     # for now we can load it here so its read right away.
-    load_models(use_GFPGAN=True)
+    load_models(use_GFPGAN=True, custom_model=st.session_state.defaults.general.base_model)
     while True:
 
         if loop_retry > 10 and current_id:
