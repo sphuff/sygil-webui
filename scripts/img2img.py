@@ -626,10 +626,10 @@ def layout():
 
 			#mask_holder = st.empty()
 
-			uploaded_masks = st.file_uploader(
-						"Upload Mask", accept_multiple_files=False, type=["png", "jpg", "jpeg", "webp", 'jfif'],
-						help="Upload an mask image which will be used for masking the image to image generation.",
-					)
+			# uploaded_masks = st.file_uploader(
+			# 			"Upload Mask", accept_multiple_files=False, type=["png", "jpg", "jpeg", "webp", 'jfif'],
+			# 			help="Upload an mask image which will be used for masking the image to image generation.",
+			# 		)
 
 			#
 			# Create a canvas component
@@ -702,6 +702,7 @@ def layout():
 				###img_array = np.array(image) # if you want to pass it to OpenCV
 				#image_holder.image(new_img)
 				new_mask = None
+				st.session_state["uploaded_masks"] = None
 
 				if st.session_state["uploaded_masks"]:
 					mask = Image.fromarray(st.session_state["uploaded_masks"].image_data)
