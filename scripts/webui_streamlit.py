@@ -204,7 +204,7 @@ if __name__ == '__main__':
     if not opt.headless:
         layout()
 
-    load_models(use_GFPGAN=True, custom_model=st.session_state.defaults.general.base_model)
+    load_models(custom_model=st.session_state.defaults.general.base_model)
 
     with server_state_lock["bridge"]:
         if server_state["bridge"]:
