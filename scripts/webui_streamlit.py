@@ -20,7 +20,7 @@
 # We import hydralit like this to replace the previous stuff
 # we had with native streamlit as it lets ur replace things 1:1
 from sd_utils import st, hc, load_configs, load_css, set_logger_verbosity,\
-     logger, quiesce_logger, set_page_title, threading, random
+     logger, quiesce_logger, set_page_title, threading, random, load_models
 
 # streamlit imports
 import streamlit_nested_layout
@@ -35,6 +35,8 @@ from sd_utils.bridge import run_bridge
 
 # import custom components
 from custom_components import draggable_number_input
+
+import hydralit as st
 
 # end of imports
 #---------------------------------------------------------------------------------------------------------------
@@ -201,6 +203,8 @@ if __name__ == '__main__':
 
     if not opt.headless:
         layout()
+
+    load_models(use_GFPGAN=True, custom_model=st.session_state.defaults.general.base_model)
 
     with server_state_lock["bridge"]:
         if server_state["bridge"]:
