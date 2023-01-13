@@ -57,9 +57,12 @@ general:
     grid_quality: 95
     n_rows: -1
     no_verify_input: False
+    show_percent_in_tab_title: True
+    enable_suggestions: True
     no_half: False
     use_float16: False
     precision: "autocast"
+    use_cudnn: False
     optimized: False
     optimized_turbo: False
     optimized_config: "optimizedSD/v1-inference.yaml"
@@ -71,6 +74,7 @@ general:
 admin:
     hide_server_setting: False
     hide_browser_setting: False
+    global_negative_prompt: ""
 
 debug:
     enable_hydralit: False
@@ -220,6 +224,7 @@ txt2vid:
 
     beta_scheduler_type: "scaled_linear"
     max_duration_in_seconds: 30
+    fps: 30
 
     LDSR_config:
         sampling_steps: 50
@@ -425,3 +430,11 @@ model_manager:
                 ldsr_model:
                     file_name:     "model.ckpt"
                     download_link:  "https://heibox.uni-heidelberg.de/f/578df07c8fc04ffbadf3/?dl=1"
+
+        sygil:
+            model_name:     "Sygil Diffusion 0.1"
+            save_location:  "./models/custom"
+            files:
+                sd_wd_ld_trinart_merged:
+                    file_name: "sygil-diffusion-v0.1_365608_lora.ckpt"
+                    download_link:  "https://huggingface.co/Sygil/Sygil-Diffusion-v0.1/resolve/main/sygil-diffusion-v0.1_365608_lora.ckpt"

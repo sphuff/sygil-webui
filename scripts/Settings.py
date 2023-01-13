@@ -125,8 +125,13 @@ def layout():
                 st.session_state["defaults"].general.no_half = st.checkbox("No Half", value=st.session_state['defaults'].general.no_half,
                                                                            help="DO NOT switch the model to 16-bit floats. Default: False")
 
+                st.session_state["defaults"].general.use_cudnn = st.checkbox("Use cudnn", value=st.session_state['defaults'].general.use_cudnn,
+                                                                               help="Switch the pytorch backend to use cudnn, this should help with fixing Nvidia 16xx cards getting" 
+                                                                               "a black or green image. Default: False")
+                
                 st.session_state["defaults"].general.use_float16 = st.checkbox("Use float16", value=st.session_state['defaults'].general.use_float16,
                                                                                help="Switch the model to 16-bit floats. Default: False")
+                
 
                 precision_list = ['full', 'autocast']
                 st.session_state["defaults"].general.precision = st.selectbox("Precision", precision_list, index=precision_list.index(st.session_state['defaults'].general.precision),
@@ -203,6 +208,14 @@ def layout():
 
                 st.session_state["defaults"].general.no_verify_input = st.checkbox("Do not Verify Input", value=st.session_state['defaults'].general.no_verify_input,
                                                                                    help="Do not verify input to check if it's too long. Default: False")
+                
+                st.session_state["defaults"].general.show_percent_in_tab_title = st.checkbox("Show Percent in tab title", value=st.session_state['defaults'].general.show_percent_in_tab_title,
+                                                                                   help="Add the progress percent value to the page title on the tab on your browser. "
+                                                                                   "This is useful in case you need to know how the generation is going while doign something else"
+                                                                                   "in another tab on your browser. Default: True")
+                
+                st.session_state["defaults"].general.enable_suggestions = st.checkbox("Enable Suggestions Box", value=st.session_state['defaults'].general.enable_suggestions,
+                                                                                   help="Adds a suggestion box under the prompt when clicked. Default: True")
 
                 st.session_state["defaults"].daisi_app.running_on_daisi_io = st.checkbox("Running on Daisi.io?", value=st.session_state['defaults'].daisi_app.running_on_daisi_io,
                                                                                          help="Specify if we are running on app.Daisi.io . Default: False")

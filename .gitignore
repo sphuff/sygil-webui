@@ -54,6 +54,7 @@ condaenv.*.requirements.txt
 # 	Repo-specific
 # =========================================================================== #
 /configs/webui/userconfig_streamlit.yaml
+/configs/webui/userconfig_flet.yaml
 /custom-conda-path.txt
 !/src/components/*
 !/src/pages/*
@@ -61,10 +62,14 @@ condaenv.*.requirements.txt
 /outputs
 /model_cache
 /log/**/*.png
+/log/webui/*
 /log/log.csv
 /flagged/*
 /gfpgan/*
 /models/*
+/webui/flet/assets/uploads/
+/webui/flet/assets/outputs/
+
 z_version_env.tmp
 scripts/bridgeData.py
 /user_data/*
